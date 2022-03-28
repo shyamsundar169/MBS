@@ -1,9 +1,12 @@
 package com.MBS;
 
+
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
+
 import java.text.SimpleDateFormat;
 
-import org.junit.Assert;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
@@ -26,7 +29,7 @@ class MultiplexBookingSystemApplicationTests {
 	      u.setDateofbirth(new SimpleDateFormat("yyyy-MM-dd").parse("1994-06-03"));
 	      u.setPassword("testPass");
 	      u.setConfirmpassword("testPass");
-	      Assert.assertEquals("Invalid EmailId", userService.addUser(u));
+	      assertEquals("Invalid EmailId", userService.addUser(u));
 	   }
 	
 	@Test
@@ -39,7 +42,7 @@ class MultiplexBookingSystemApplicationTests {
 	      u.setDateofbirth(new SimpleDateFormat("yyyy-MM-dd").parse("1994-06-03"));
 	      u.setPassword("testPass");
 	      u.setConfirmpassword("testPass");
-	      Assert.assertEquals("Invalid Mobile number", userService.addUser(u));
+	      assertEquals("Invalid Mobile number", userService.addUser(u));
 	   }
 	
 	@Test
@@ -52,7 +55,7 @@ class MultiplexBookingSystemApplicationTests {
 	      u.setDateofbirth(new SimpleDateFormat("yyyy-MM-dd").parse("1994-06-03"));
 	      u.setPassword("testPass");
 	      u.setConfirmpassword("testPass12");
-	      Assert.assertEquals("Password and confirm password does not matchr", userService.addUser(u));
+	      assertEquals("Password and confirm password does not match", userService.addUser(u));
 	   }
 
 }
